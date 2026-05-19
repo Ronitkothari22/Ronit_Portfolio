@@ -1,0 +1,22 @@
+{
+  "name": "new_portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "env -u NODE_OPTIONS next dev",
+    "build": "env -u NODE_OPTIONS next build",
+    "start": "env -u NODE_OPTIONS next start",
+    "lint": "env -u NODE_OPTIONS next lint"
+  },
+  "dependencies": {
+    "next": "15.3.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "@types/node": "22.15.21",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2"
+  }
+}
