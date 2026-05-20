@@ -16,7 +16,7 @@ export function HeroSection({ bars }: HeroSectionProps) {
         <p className="sub">
           AI Engineer & Full Stack Developer from India turning complex problems into clean, scalable digital products. From machine learning pipelines to full-stack applications, I build things that work.
         </p>
-        <p className="availability"><span /> Available for Projects - 2025</p>
+        <p className="availability"><span /> Available for Projects - 2026</p>
         <div className="hero-cta">
           <a className="btn btn-primary" href="#work" data-magnetic>Explore Work ↗</a>
           <a className="btn btn-outline" href="#contact" data-magnetic>Let&apos;s Build Something</a>

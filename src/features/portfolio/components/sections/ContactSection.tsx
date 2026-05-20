@@ -4,11 +4,11 @@ export function ContactSection() {
       <div className="orb orb-3" />
       <p className="ghost-label">CONTACT</p>
       <h2 data-reveal>Let&apos;s Build Something <span className="outline">Remarkable.</span></h2>
-      <p className="contact-sub" data-reveal>If you&apos;re building something ambitious in AI or product engineering, share a quick brief. I reply with scope, timeline, and next steps.</p>
+      <p className="contact-sub" data-reveal>Have a role, question, or collaboration idea? Send a quick message and I&apos;ll get back to you soon.</p>
 
       <div className="contact-grid" data-reveal>
         <form className="contact-form" action="mailto:ronitkothari22@gmail.com" method="post" encType="text/plain">
-          <h3>Project Brief</h3>
+          <h3>Contact Form</h3>
           <label>
             Your Name
             <input type="text" name="name" placeholder="John Doe" required />
@@ -18,21 +18,14 @@ export function ContactSection() {
             <input type="email" name="email" placeholder="you@company.com" required />
           </label>
           <label>
-            Project Type
-            <select name="projectType" defaultValue="">
-              <option value="" disabled>Select one</option>
-              <option>AI System</option>
-              <option>Automation</option>
-              <option>Full Stack Web App</option>
-              <option>Mobile App</option>
-              <option>Other</option>
-            </select>
+            Subject
+            <input type="text" name="subject" placeholder="Job opportunity / General query" />
           </label>
           <label>
             Message
-            <textarea name="message" rows={5} placeholder="Tell me what you are building, goals, and timeline." required />
+            <textarea name="message" rows={5} placeholder="Write your message here." required />
           </label>
-          <button className="btn btn-primary huge" type="submit" data-magnetic>Send Brief →</button>
+          <button className="btn btn-primary huge" type="submit" data-magnetic>Send Message →</button>
         </form>
 
         <div className="contact-card">
