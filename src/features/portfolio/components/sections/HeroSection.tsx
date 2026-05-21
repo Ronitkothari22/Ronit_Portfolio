@@ -15,7 +15,6 @@ export function HeroSection({ bars: _bars }: HeroSectionProps) {
 
         <p className="hero-intro">
           Hello, I&apos;m <strong>Ronit Kothari</strong>
-          <span className="hero-avatar" aria-hidden>RK</span>
           <span>AI Engineer & Full Stack Developer</span>
         </p>
 
