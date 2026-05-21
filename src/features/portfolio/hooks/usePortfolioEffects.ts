@@ -105,3 +105,45 @@ export function useMagneticElements() {
     return () => cleanups.forEach((cleanup) => cleanup());
   }, []);
 }
+
+export function useTimelineProgress() {
+  useEffect(() => {
+    const timeline = document.querySelector<HTMLElement>("[data-experience-timeline]");
+    if (!timeline) return;
+
+    const cards = Array.from(timeline.querySelectorAll<HTMLElement>(".experience-card"));
+    const setProgress = () => {
+      const rect = timeline.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const start = viewportHeight * 0.28;
+      const end = rect.height + viewportHeight * 0.28;
+      const progress = Math.min(1, Math.max(0, (start - rect.top) / end));
+      timeline.style.setProperty("--timeline-progress", `${progress}`);
+
+      cards.forEach((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardMid = cardRect.top + cardRect.height / 2;
+        const isActive = cardMid < viewportHeight * 0.62;
+        card.classList.toggle("active", isActive);
+      });
+    };
+
+    let frame = 0;
+    const onChange = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setProgress();
+      });
+    };
+
+    setProgress();
+    window.addEventListener("scroll", onChange, { passive: true });
+    window.addEventListener("resize", onChange);
+    return () => {
+      window.removeEventListener("scroll", onChange);
+      window.removeEventListener("resize", onChange);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+}

@@ -23,7 +23,7 @@ export type BlogPost = {
   link: string;
 };
 
-export const NAV_ITEMS = ["work", "services", "experience", "blog", "process", "stack", "contact"];
+export const NAV_ITEMS = ["about", "work", "services", "experience", "blog", "process", "stack", "contact"];
 
 export const PROJECTS: Project[] = [
   {

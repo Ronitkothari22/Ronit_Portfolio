@@ -2,34 +2,30 @@ type HeroSectionProps = {
   bars: number[];
 };
 
-export function HeroSection({ bars }: HeroSectionProps) {
+export function HeroSection({ bars: _bars }: HeroSectionProps) {
   return (
     <section id="hero" className="hero section">
-      <div className="orb orb-1" />
-      <div className="orb orb-2" />
-      <div className="grid-bg" />
-      <div className="hero-copy" data-reveal>
-        <p className="eyebrow">Ronit Kothari Portfolio</p>
+      <div className="hero-stage" data-reveal>
+        <a href="#work" className="hero-chip">New · AI Systems + Product Engineering</a>
+
         <h1>
-          Building AI Products, Systems & <span className="accent">Experiences</span> That <span className="outline">Actually</span> Matter.
+          Code That Feels Designed.<br />
+          <em>Engineering That Actually Ships.</em>
         </h1>
-        <p className="sub">
-          AI Engineer & Full Stack Developer from India turning complex problems into clean, scalable digital products. From machine learning pipelines to full-stack applications, I build things that work.
+
+        <p className="hero-intro">
+          Hello, I&apos;m <strong>Ronit Kothari</strong>
+          <span className="hero-avatar" aria-hidden>RK</span>
+          <span>AI Engineer & Full Stack Developer</span>
         </p>
-        <p className="availability"><span /> Available for Projects - 2026</p>
-        <div className="hero-cta">
-          <a className="btn btn-primary" href="#work" data-magnetic>Explore Work ↗</a>
-          <a className="btn btn-outline" href="#contact" data-magnetic>Let&apos;s Build Something</a>
+
+        <div className="hero-cta ref-cta">
+          <a className="btn btn-primary" href="#contact" data-magnetic>Let&apos;s Connect</a>
+          <a className="hero-email" href="mailto:ronitkothari22@gmail.com">ronitkothari22@gmail.com</a>
         </div>
-        <p className="typing">&gt; Building systems that matter<span className="blink">_</span></p>
       </div>
-      <div className="hero-visual" data-reveal>
-        <article className="panel node-map floating"><h3>Current Focus</h3><div className="nodes"><span>LLM Systems</span><span>Product Engineering</span><span>Scalable AI Apps</span></div></article>
-        <article className="panel chart"><h3>Execution Signals</h3><div className="bars">{bars.map((h, idx) => <i key={idx} style={{ height: `${h}%`, animationDelay: `${idx * 0.08}s` }} />)}</div></article>
-        <article className="panel mini metric-a floating">AI + Product Focus</article>
-        <article className="panel mini metric-b floating">Production Ready</article>
-        <article className="panel code floating"><pre>{`const outcome = build({\n  strategy,\n  systems,\n  execution\n});`}</pre></article>
-      </div>
+      <div className="hero-horizon" aria-hidden />
+      <div className="hero-horizon-core" aria-hidden />
     </section>
   );
 }

@@ -2,20 +2,21 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { NAV_ITEMS } from "../data";
-import { useCountUp, useCustomCursor, useMagneticElements, useRevealObserver } from "../hooks/usePortfolioEffects";
+import { useCountUp, useCustomCursor, useMagneticElements, useRevealObserver, useTimelineProgress } from "../hooks/usePortfolioEffects";
 import { SiteChrome } from "./layout/SiteChrome";
 import { GlobalFx } from "./shared/GlobalFx";
 import { HeroSection } from "./sections/HeroSection";
 import { WorkSection } from "./sections/WorkSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { AboutSection } from "./sections/AboutSection";
+import { ExperienceSection } from "./sections/ExperienceSection";
 import { ProcessSection } from "./sections/ProcessSection";
 import { StackSection } from "./sections/StackSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { ContactSection } from "./sections/ContactSection";
 
 export function PortfolioPage() {
-  const [active, setActive] = useState("work");
+  const [active, setActive] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
   const cursorDot = useRef<HTMLDivElement>(null);
   const cursorRing = useRef<HTMLDivElement>(null);
@@ -24,11 +25,13 @@ export function PortfolioPage() {
   useCountUp();
   useCustomCursor(cursorDot, cursorRing);
   useMagneticElements();
+  useTimelineProgress();
 
   const bars = useMemo(() => Array.from({ length: 6 }).map(() => 25 + Math.round(Math.random() * 65)), []);
 
   useEffect(() => {
-    const sections = NAV_ITEMS.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => Boolean(el));
+    const sectionIds = ["hero", ...NAV_ITEMS];
+    const sections = sectionIds.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => Boolean(el));
 
     const onScroll = () => {
       const mid = window.scrollY + window.innerHeight * 0.35;
@@ -50,9 +53,10 @@ export function PortfolioPage() {
       <GlobalFx cursorDot={cursorDot} cursorRing={cursorRing} />
       <SiteChrome active={active} scrolled={scrolled} navItems={NAV_ITEMS} />
       <HeroSection bars={bars} />
+      <AboutSection />
       <WorkSection />
       <ServicesSection />
-      <AboutSection />
+      <ExperienceSection />
       <TestimonialsSection />
       <ProcessSection />
       <StackSection />
