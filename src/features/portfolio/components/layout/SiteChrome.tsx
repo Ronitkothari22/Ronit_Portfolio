@@ -17,7 +17,6 @@ export function SiteChrome({ active, scrolled, navItems }: SiteChromeProps) {
   return (
     <>
       <header className={`site-nav ${scrolled ? "scrolled" : ""}`}>
-        <div className="brand">RK</div>
         <nav className="nav-pill">
           {navPill.map((item) => (
             <a key={item.id} href={`#${item.id}`} className={active === item.id ? "active" : ""}>
