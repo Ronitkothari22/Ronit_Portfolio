@@ -16,17 +16,20 @@ export function AboutSection() {
         </p>
         <p>I believe in learning fast, executing consistently, and building things that create real impact.</p>
         <div className="about-socials">
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://x.com" target="_blank" rel="noreferrer">X</a>
+          <a href="https://www.linkedin.com/in/ronit-kothari-843987251/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/ronitkothari22" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
 
       <div className="about-visual" data-reveal>
-        <div className="about-card about-card-back" />
-        <div className="about-card about-card-mid" />
-        <div className="about-card about-card-front" />
-        <p>I Build, Ship, Repeat</p>
+        <div className="about-aura about-aura-one" />
+        <div className="about-aura about-aura-two" />
+        <div className="about-photo-wrap">
+          <img src="/profile.png" alt="Ronit Kothari portrait" className="about-photo" />
+        </div>
+        <div className="about-badge about-badge-top">AI + Full Stack</div>
+        <div className="about-badge about-badge-bottom">Build. Ship. Repeat.</div>
+        <div className="about-orbit" />
       </div>
     </section>
   );
