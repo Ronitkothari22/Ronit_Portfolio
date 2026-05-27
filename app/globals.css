@@ -610,6 +610,73 @@ h2 {
   text-underline-offset: 3px;
 }
 
+.project-media {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.project-photo-frame {
+  border-radius: 14px;
+  background: #09090b;
+  border: 1px solid rgba(161, 161, 170, 0.18);
+  min-height: 280px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.project-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-no-media {
+  grid-template-columns: 1fr;
+}
+
+.photo-placeholder {
+  color: #8d8d97;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links a,
+.icon-disabled {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(161, 161, 170, 0.28);
+  display: inline-grid;
+  place-items: center;
+  color: #e8e8f0;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-links a:hover {
+  border-color: rgba(124, 58, 237, 0.75);
+  color: #c4b5fd;
+}
+
+.project-links svg,
+.icon-disabled svg {
+  width: 19px;
+  height: 19px;
+}
+
+.icon-disabled {
+  opacity: 0.45;
+}
+
 .tags,
 .impact {
   display: flex;
@@ -1274,6 +1341,7 @@ h2 {
   .process-line,
   .light .bento,
   .stack-grid { grid-template-columns: 1fr; }
+  .project-photo-frame { min-height: 240px; }
   .about-ref {
     padding: 40px 20px;
     gap: 24px;

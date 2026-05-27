@@ -4,6 +4,8 @@ export type Project = {
   tagline: string;
   problemSolved: string;
   whatIBuilt: string;
+  image?: string;
+  githubLink?: string;
   projectLink?: string;
   stack: string[];
   impact: string[];
@@ -34,7 +36,9 @@ export const PROJECTS: Project[] = [
       "Candidates were walking into interviews underprepared with no structured feedback, no personalized coaching, and no way to benchmark themselves.",
     whatIBuilt:
       "An end-to-end AI interview preparation platform powered by Gemini and ChatGPT. It analyzes resumes, scores LinkedIn profiles, runs ATS compatibility checks, and generates tailored interview reports in one place.",
-    projectLink: "",
+    image: "project/interviewgenie.png",
+    githubLink: "https://github.com/Ronitkothari22/Interview-Genie",
+    projectLink: "https://interview-genie-tau.vercel.app/login",
     stack: ["Next.js", "Node.js", "Python", "Express.js", "Gemini API", "ChatGPT API"],
     impact: ["25% increase in candidate confidence", "Integrated ATS scoring + resume analysis + coding platform prep", "Feb 2025 - Present"]
   },
@@ -46,6 +50,8 @@ export const PROJECTS: Project[] = [
       "Manual attendance systems were slow, error-prone, and easy to fake. Institutions needed accurate and automatic attendance that just worked.",
     whatIBuilt:
       "A smart attendance system combining BLE beacons, WiFi triangulation, and ArcFace facial recognition, with a cross-platform mobile app handling detection to reporting.",
+    image: "project/attendx.png",
+    githubLink: "https://github.com/Ronitkothari22/AttendX/",
     projectLink: "",
     stack: ["React Native", "MongoDB", "ArcFace", "Deep Learning", "BLE"],
     impact: ["98% facial recognition accuracy", "75% reduction in manual attendance effort", "Jun 2024 - Aug 2024"]
@@ -58,6 +64,8 @@ export const PROJECTS: Project[] = [
       "Patients struggled to understand medical reports, missed appointments, and lacked a centralized health management tool.",
     whatIBuilt:
       "A full healthcare app with Flutter and Firebase using OCR and NLP to read and interpret medical reports, plus real-time reminders for appointments and health updates.",
+    image: "",
+    githubLink: "https://github.com/Ronitkothari22/HealthCare_Mobile_Application",
     projectLink: "",
     stack: ["Flutter", "Firebase", "Python", "ML", "OCR", "NLP"],
     impact: ["92% medical report extraction accuracy", "35% reduction in missed appointments", "Nov 2023 - Dec 2023"]
@@ -70,6 +78,8 @@ export const PROJECTS: Project[] = [
       "Fake news spreads faster than corrections, and there was no fast, reliable, open tool to flag misinformation in real time.",
     whatIBuilt:
       "A deep learning classifier combining BERT and LSTM for news verification, trained and tested on 50,000+ text entries.",
+    image: "",
+    githubLink: "https://github.com/Ronitkothari22/Fake-news-detetcor",
     projectLink: "",
     stack: ["BERT", "LSTM", "Python", "TensorFlow", "Deep Learning"],
     impact: ["91% classification accuracy", "50,000+ text entries processed", "Sept 2023 - Oct 2023"]
