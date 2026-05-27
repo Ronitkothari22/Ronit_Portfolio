@@ -1,4 +1,48 @@
+"use client";
+
+import { FormEvent, useMemo, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export function ContactSection() {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const isConfigured = useMemo(
+    () =>
+      Boolean(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) &&
+      Boolean(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) &&
+      Boolean(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY),
+    []
+  );
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("idle");
+
+    if (!isConfigured) {
+      setStatus("error");
+      return;
+    }
+
+    const form = event.currentTarget;
+
+    try {
+      setIsSending(true);
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+      );
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section id="contact" className="section contact">
       <div className="orb orb-3" />
@@ -7,7 +51,7 @@ export function ContactSection() {
       <p className="contact-sub" data-reveal>Have a role, question, or collaboration idea? Send a quick message and I&apos;ll get back to you soon.</p>
 
       <div className="contact-grid" data-reveal>
-        <form className="contact-form" action="mailto:ronitkothari22@gmail.com" method="post" encType="text/plain">
+        <form className="contact-form" onSubmit={onSubmit}>
           <h3>Contact Form</h3>
           <label>
             Your Name
@@ -25,7 +69,15 @@ export function ContactSection() {
             Message
             <textarea name="message" rows={5} placeholder="Write your message here." required />
           </label>
-          <button className="btn btn-primary huge" type="submit" data-magnetic>Send Message →</button>
+          {status === "success" && <p className="form-status success">Message sent successfully. I&apos;ll get back to you soon.</p>}
+          {status === "error" && (
+            <p className="form-status error">
+              Could not send message. Please check EmailJS keys and template, then try again.
+            </p>
+          )}
+          <button className="btn btn-primary huge" type="submit" data-magnetic disabled={isSending}>
+            {isSending ? "Sending..." : "Send Message →"}
+          </button>
         </form>
 
         <div className="contact-card">
