@@ -16,7 +16,7 @@ export function ProcessSection() {
           <article
             key={t}
             data-reveal
-            style={{ ["--reveal-delay" as "--reveal-delay"]: `${index * 130}ms` }}
+            style={{ "--reveal-delay": `${index * 130}ms` } as CSSProperties}
           >
             <span>{n}</span>
             <h3>{t}</h3>
@@ -27,3 +27,4 @@ export function ProcessSection() {
     </section>
   );
 }
+import type { CSSProperties } from "react";
