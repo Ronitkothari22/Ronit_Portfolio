@@ -6,7 +6,7 @@ export function HeroSection({ bars: _bars }: HeroSectionProps) {
   return (
     <section id="hero" className="hero section">
       <div className="hero-stage" data-reveal>
-        <a href="#work" className="hero-chip">New · AI Systems + Product Engineering</a>
+        <a href="#work" className="hero-chip">Building AI Products That Scale</a>
 
         <h1>
           Code That Feels Designed.<br />

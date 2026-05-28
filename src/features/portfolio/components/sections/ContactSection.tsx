@@ -98,7 +98,7 @@ export function ContactSection() {
 
       <footer className="contact-footer">
         <div>Ronit. - AI Engineer & Full Stack Developer</div>
-        <div>© 2025 Ronit Kothari - Built with obsession, not templates.</div>
+        <div>© 2026 Ronit Kothari - Built with obsession, not templates.</div>
         <div><a href="https://github.com/ronitkothari22" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/ronit-kothari-843987251/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="mailto:ronitkothari22@gmail.com">Email</a> · <a href="#blog">Blog</a></div>
       </footer>
     </section>

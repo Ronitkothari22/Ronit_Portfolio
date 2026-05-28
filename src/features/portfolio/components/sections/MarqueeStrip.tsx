@@ -1,4 +1,4 @@
-const ITEMS = ["LLM Engineering", "RAG Systems", "AI Agents", "Product Strategy", "Realtime Infrastructure", "Next.js", "Startup Velocity"];
+const ITEMS = ["LLM Engineering", "RAG Systems", "AI Agents", "Product Strategy", "Real-Time Infrastructure", "Next.js", "Startup Velocity"];
 
 export function MarqueeStrip() {
   return (

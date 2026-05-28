@@ -79,16 +79,16 @@ export const PROJECTS: Project[] = [
     whatIBuilt:
       "A deep learning classifier combining BERT and LSTM for news verification, trained and tested on 50,000+ text entries.",
     image: "",
-    githubLink: "https://github.com/Ronitkothari22/Fake-news-detetcor",
+    githubLink: "https://github.com/Ronitkothari22/Fake-news-detector",
     projectLink: "",
     stack: ["BERT", "LSTM", "Python", "TensorFlow", "Deep Learning"],
-    impact: ["91% classification accuracy", "50,000+ text entries processed", "Sept 2023 - Oct 2023"]
+    impact: ["91% classification accuracy", "50,000+ text entries processed", "Sep 2023 - Oct 2023"]
   }
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
-    role: "Freelance Developer",
+    role: "Freelance Full-Stack Developer",
     company: "Independent",
     duration: "2025 - Present",
     details: [
@@ -100,7 +100,7 @@ export const EXPERIENCES: Experience[] = [
   {
     role: "AI/ML Intern",
     company: "Clumoss",
-    duration: "Aug 2023 - Sept 2023",
+    duration: "Aug 2023 - Sep 2023",
     details: [
       "Completed an internship focused on practical machine learning algorithms.",
       "Collaborated with the team to solve applied product and data problems."
