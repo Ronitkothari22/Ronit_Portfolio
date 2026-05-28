@@ -151,5 +151,5 @@ export const TECH_STACK = [
   ["Mobile", "React Native, Flutter"],
   ["AI / ML", "TensorFlow, PyTorch, Keras, Scikit-learn, BERT, LangChain"],
   ["Data", "PostgreSQL, MongoDB, MySQL, Pandas, NumPy"],
-  ["Cloud & Tools", "Git, Docker, Linux, Vercel, Jupyter, VS Code"]
+  ["Cloud & Tools", "Git, Docker, Linux, Vercel, Jupyter, VS Code, Codex, Cursor, Claude Code"]
 ] as const;

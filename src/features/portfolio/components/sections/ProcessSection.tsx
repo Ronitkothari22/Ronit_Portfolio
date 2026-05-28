@@ -12,8 +12,16 @@ export function ProcessSection() {
       <p className="ghost-label">PROCESS</p>
       <h2 data-reveal>How I Work</h2>
       <div className="process-line" data-reveal>
-        {PROCESS_STEPS.map(([n, t, d]) => (
-          <article key={t}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>
+        {PROCESS_STEPS.map(([n, t, d], index) => (
+          <article
+            key={t}
+            data-reveal
+            style={{ ["--reveal-delay" as "--reveal-delay"]: `${index * 130}ms` }}
+          >
+            <span>{n}</span>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </article>
         ))}
       </div>
     </section>
