@@ -32,7 +32,6 @@ const LOGO_MAP: Record<string, { slug: string; color?: string }> = {
   Linux: { slug: "linux", color: "FCC624" },
   Vercel: { slug: "vercel", color: "ffffff" },
   Jupyter: { slug: "jupyter", color: "F37626" },
-  "VS Code": { slug: "visualstudiocode", color: "0078D4" },
   Codex: { slug: "openai", color: "ffffff" },
   Cursor: { slug: "cursor", color: "ffffff" },
   "Claude Code": { slug: "anthropic", color: "ffffff" }
